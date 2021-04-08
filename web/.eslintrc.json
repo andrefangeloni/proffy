@@ -16,6 +16,7 @@
   "rules": {
     "import/extensions": [
       "error",
+      "always",
       "ignorePackages",
       {
         "js": "never",
