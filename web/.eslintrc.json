@@ -13,10 +13,14 @@
     "sourceType": "module"
   },
   "plugins": ["react", "@typescript-eslint"],
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  },
   "rules": {
     "import/extensions": [
       "error",
-      "always",
       "ignorePackages",
       {
         "js": "never",
