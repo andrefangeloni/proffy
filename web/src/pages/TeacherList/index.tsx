@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Input from '../../components/Input';
 import PageHeader from '../../components/PageHeader';
 import TeacherItem from '../../components/TeacherItem';
 
@@ -9,26 +10,9 @@ const TeacherList = () => (
   <div id="page-teacher-list" className="container">
     <PageHeader title="Estes são os Proffys disponíveis">
       <form id="search-teachers">
-        <div className="input-block">
-          <label htmlFor="subject">
-            Matéria
-            <input type="text" id="subject" />
-          </label>
-        </div>
-
-        <div className="input-block">
-          <label htmlFor="week_day">
-            Dia da semana
-            <input type="text" id="week_day" />
-          </label>
-        </div>
-
-        <div className="input-block">
-          <label htmlFor="time">
-            Hora
-            <input type="text" id="time" />
-          </label>
-        </div>
+        <Input name="subject" label="Matéria" />
+        <Input name="week_day" label="Dia da semana" />
+        <Input name="time" label="Hora" type="time" />
       </form>
     </PageHeader>
 
