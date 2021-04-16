@@ -4,28 +4,36 @@ import whatsApp from '../../assets/images/icons/whatsapp.svg';
 
 import './styles.css';
 
-const TeacherItem = () => (
+export interface Teacher {
+  id: number;
+  subject: string;
+  cost: number;
+  name: string;
+  avatar: string;
+  whatsapp: string;
+  bio: string;
+}
+
+interface TeacherItemProps {
+  teacher: Teacher;
+}
+
+const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => (
   <article className="teacher-item">
     <header>
-      <img src="https://github.com/andrefangeloni.png" alt="Avatar" />
+      <img src={teacher.avatar} alt={teacher.name} />
       <div>
-        <strong>André Angeloni</strong>
-        <span>Informática</span>
+        <strong>{teacher.name}</strong>
+        <span>{teacher.subject}</span>
       </div>
     </header>
 
-    <p>
-      Entusiasta das melhores tecnologias lançadas
-      <br />
-      <br />
-      Apaixonado por estudar e desenvolver aplicaçações em ReactJS e React
-      Native
-    </p>
+    <p>{teacher.bio}</p>
 
     <footer>
       <p>
         Preço/hora
-        <strong>R$ 100,00</strong>
+        <strong>{`R$ ${teacher.cost}`}</strong>
       </p>
 
       <button type="button">
