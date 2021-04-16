@@ -2,6 +2,8 @@ import React from 'react';
 
 import whatsApp from '../../assets/images/icons/whatsapp.svg';
 
+import api from '../../services/api';
+
 import './styles.css';
 
 export interface Teacher {
@@ -18,30 +20,43 @@ interface TeacherItemProps {
   teacher: Teacher;
 }
 
-const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => (
-  <article className="teacher-item">
-    <header>
-      <img src={teacher.avatar} alt={teacher.name} />
-      <div>
-        <strong>{teacher.name}</strong>
-        <span>{teacher.subject}</span>
-      </div>
-    </header>
+const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
+  const createNewConnection = async () => {
+    await api.post('/connections', {
+      user_id: teacher.id,
+    });
+  };
 
-    <p>{teacher.bio}</p>
+  return (
+    <article className="teacher-item">
+      <header>
+        <img src={teacher.avatar} alt={teacher.name} />
+        <div>
+          <strong>{teacher.name}</strong>
+          <span>{teacher.subject}</span>
+        </div>
+      </header>
 
-    <footer>
-      <p>
-        Preço/hora
-        <strong>{`R$ ${teacher.cost}`}</strong>
-      </p>
+      <p>{teacher.bio}</p>
 
-      <a href={`https://wa.me/+55${teacher.whatsapp}`}>
-        <img src={whatsApp} alt="WhatsApp" />
-        Entrar em contato
-      </a>
-    </footer>
-  </article>
-);
+      <footer>
+        <p>
+          Preço/hora
+          <strong>{`R$ ${teacher.cost}`}</strong>
+        </p>
+
+        {/* eslint-disable-next-line react/jsx-no-target-blank */}
+        <a
+          target="_blank"
+          onClick={createNewConnection}
+          href={`https://wa.me/+55${teacher.whatsapp}`}
+        >
+          <img src={whatsApp} alt="WhatsApp" />
+          Entrar em contato
+        </a>
+      </footer>
+    </article>
+  );
+};
 
 export default TeacherItem;
