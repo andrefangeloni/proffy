@@ -11,9 +11,10 @@ import styles from './styles';
 
 interface HeaderProps {
   title: string;
+  headerRight?: React.ReactNode;
 }
 
-const Header: React.FC<HeaderProps> = ({ title }) => {
+const Header: React.FC<HeaderProps> = ({ title, headerRight, children }) => {
   const { navigate } = useNavigation();
 
   return (
@@ -26,7 +27,12 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
         <Image source={logoImg} resizeMode="contain" />
       </View>
 
-      <Text style={styles.title}>{title}</Text>
+      <View style={styles.header}>
+        <Text style={styles.title}>{title}</Text>
+        {headerRight}
+      </View>
+
+      {children}
     </View>
   );
 };
