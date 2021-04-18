@@ -1,12 +1,14 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
+
+import Header from '../../components/Header';
 
 import styles from './styles';
 
 const TeacherList = () => {
   return (
     <View style={styles.container}>
-      <Text>Teacher List</Text>
+      <Header title="Proffys disponíveis" />
     </View>
   );
 };
