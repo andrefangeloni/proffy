@@ -14,10 +14,6 @@ import giveClassesIcon from '../../assets/images/icons/give-classes.png';
 const Landing = () => {
   const { navigate } = useNavigation();
 
-  const openGiveClassesScreen = () => {
-    navigate('GiveClasses');
-  };
-
   return (
     <View style={styles.container}>
       <Image source={landingImg} style={styles.banner} />
@@ -28,14 +24,17 @@ const Landing = () => {
       </Text>
 
       <View style={styles.buttonsContainer}>
-        <RectButton style={[styles.button, styles.buttonPrimary]}>
+        <RectButton
+          style={[styles.button, styles.buttonPrimary]}
+          onPress={() => navigate('BottomTabs')}
+        >
           <Image source={studyIcon} />
           <Text style={styles.buttonText}>Estudar</Text>
         </RectButton>
 
         <RectButton
           style={[styles.button, styles.buttonSecondary]}
-          onPress={() => openGiveClassesScreen()}
+          onPress={() => navigate('GiveClasses')}
         >
           <Image source={giveClassesIcon} />
           <Text style={styles.buttonText}>Dar Aulas</Text>
