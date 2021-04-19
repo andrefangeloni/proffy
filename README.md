@@ -30,15 +30,18 @@ Developed together with [Rocketseat](https://rocketseat.com.br)</p>
 # :camera: Screenshots
 
 - #### Web
-  <img src="screenshots/landing-web.png" width="49.5%"/>
-  <img src="screenshots/teacher-list-web.png" width="49.5%"/>
 
+  Click to expand <br />
+  <img src="https://raw.githubusercontent.com/andrefangeloni/proffy/master/screenshots/landing-web.png" />
+  <img src="https://raw.githubusercontent.com/andrefangeloni/proffy/master/screenshots/teacher-list-web.png" />
   <hr />
 
 - #### Mobile
-<img src="screenshots/landing-mobile.png" width="33%" />
-<img src="screenshots/teacher-list-mobile.png" width="33%"/>
-<img src="screenshots/wanna-be-proffy.png" width="33%"/>
+<p align="center">
+<img src="https://raw.githubusercontent.com/andrefangeloni/proffy/master/screenshots/landing-mobile.png" width="32%" />
+<img src="https://raw.githubusercontent.com/andrefangeloni/proffy/master/screenshots/teacher-list-mobile.png" width="32%"/>
+<img src="https://raw.githubusercontent.com/andrefangeloni/proffy/master/screenshots/wanna-be-proffy.png" width="32%"/>
+</p>
 
 # Getting started
 
